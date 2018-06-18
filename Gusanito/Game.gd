@@ -15,7 +15,8 @@ func spawn_fruits():
 	var projectResolution = OS.get_real_window_size()
 	
 	var node = fruit.instance()
-	node.set_pos(rand_range(0, projectResolution.x), rand_range(0, projectResolution.y))	
+	var newPos = Vector2(rand_range(0, projectResolution.x), rand_range(0, projectResolution.y))
+	node.position = newPos
 	
 	add_child(node)
 	
