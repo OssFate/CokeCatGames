@@ -2,6 +2,8 @@ extends Node
 
 var snake = load("res://snake.tscn")
 var fruit = load("res://Fruit.tscn")
+var seconds = 0;
+onready var timer = get_node("Label")
 
 var tail = []
 
@@ -25,3 +27,8 @@ func spawn_fruits():
 func _on_Spawn_button_up():
 	spawn_fruits()
 	pass # replace with function body
+
+func _process(delta):
+	seconds += delta;
+	timer.set_text("tiempo %d segundos" % seconds)
+	pass
