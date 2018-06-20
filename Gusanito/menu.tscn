@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
-[ext_resource path="res://StaticBody2D.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="Menu" type="Node" index="0"]
 
@@ -55,23 +53,6 @@ group = null
 text = "Start"
 flat = false
 align = 1
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
-
-position = Vector2( 190, 250 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
-
-texture = ExtResource( 3 )
 
 [connection signal="button_up" from="StartButton" to="." method="_on_StartButton_button_up"]
 
