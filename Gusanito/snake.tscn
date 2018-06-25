@@ -19,6 +19,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+outOffset = 0
+relocate = true
 speed = 300
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
