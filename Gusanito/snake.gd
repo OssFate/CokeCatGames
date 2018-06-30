@@ -73,5 +73,8 @@ func outOfBounds():
 	return false
 
 func get_bigger():
-	#Should get big here :D
-	print("ITS GONNA BE HUUUUGGGEEEEE")
+	var newTail = tailObject.instance()
+	newTail.init(tail.back())
+	tail.append(newTail)
+	add_child(newTail)
+	pass

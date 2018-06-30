@@ -13,10 +13,6 @@ func init(_target):
 	pass
 
 func move():
-	print(temp)
-	print(pLog.size())
-	print("Global Pos: %s" %self.global_position)
-	print("Local Pos: %s" %self.position)
 	#TELEPORT PLZ
 	self.global_position = pLog.pop_front()
 	pass
@@ -25,13 +21,11 @@ func _process(delta):
 	temp += delta
 	
 	if temp >= delay:
-		print("Added new position and move")
-		pLog.push_back(target.position)
+		pLog.push_back(target.global_position)
 		move()
 		pass
 	else:
-		print("Added new position")
-		pLog.push_back(target.position)
+		pLog.push_back(target.global_position)
 		pass
 	
 	pass
