@@ -14,7 +14,7 @@ func _ready():
 	motion = Vector2(speed, 0)
 	
 	var defaultTail = tailObject.instance()
-	defaultTail.init(self)
+	defaultTail.init(self, -1,false)
 	tail.append(defaultTail)
 	add_child(tail[0])
 	pass
@@ -74,7 +74,7 @@ func outOfBounds():
 
 func get_bigger():
 	var newTail = tailObject.instance()
-	newTail.init(tail.back())
+	newTail.init(tail.back(), (tail.size() * -1) - 2)
 	tail.append(newTail)
 	add_child(newTail)
 	pass
