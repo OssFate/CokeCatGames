@@ -4,8 +4,20 @@ var windowSize = OS.get_window_safe_area().size
 export var outOffset = 0
 export var relocate = false
 
-var motion = Vector2()
 export var speed = 100
+var motion = Vector2()
+
+var tailObject = load("res://tail.tscn")
+var tail = []
+
+func _ready():
+	motion = Vector2(speed, 0)
+	
+	var defaultTail = tailObject.instance()
+	defaultTail.init(self)
+	tail.append(defaultTail)
+	add_child(tail[0])
+	pass
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
