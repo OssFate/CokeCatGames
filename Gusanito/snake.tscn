@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://snake.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://dragon_head.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
+radius = 10.0
+height = 34.8114
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
-position = Vector2( 525.313, 278.998 )
+position = Vector2( 516.055, 531.631 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -29,6 +30,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -0.208069, -2.55695 )
+scale = Vector2( 1.62698, 0.963067 )
 shape = SubResource( 1 )
 
 
