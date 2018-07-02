@@ -15,6 +15,13 @@ func _ready():
 	
 	var defaultTail = tailObject.instance()
 	defaultTail.init(self, -1,false)
+	
+	#Sat0_Ntr
+	if Global.sato:
+		var tail = ImageTexture.new()
+		tail.load(Global.sato_tail)
+		defaultTail.get_node("Sprite").set_texture(tail)
+	
 	tail.append(defaultTail)
 	add_child(tail[0])
 	pass
@@ -39,8 +46,10 @@ func _physics_process(delta):
 	
 	if get_slide_count() > 0 :
 		var coll = get_slide_collision(0)
+		var texture = coll.collider.get_node("Sprite").get_texture()
+		
 		coll.collider.queue_free()
-		get_bigger()
+		get_bigger(texture)
 		#re spawn fruit
 		get_node("..").spawn_fruit()
 
@@ -72,9 +81,12 @@ func outOfBounds():
 	
 	return false
 
-func get_bigger():
+func get_bigger(tex = null):
 	var newTail = tailObject.instance()
 	newTail.init(tail.back(), (tail.size() * -1) - 2)
+	if Global.sato:
+		newTail.get_node("Sprite").set_texture(tex)
+	
 	tail.append(newTail)
 	add_child(newTail)
 	pass

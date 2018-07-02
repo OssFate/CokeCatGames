@@ -14,9 +14,17 @@ config/name="Gusanito"
 run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/resizable=false
+
+[global]
+
+fps=true
 
 [rendering]
 

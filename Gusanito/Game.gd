@@ -21,6 +21,13 @@ var realSnek
 func _ready():
 	#tail.append(snake.instance())
 	realSnek = snake.instance()
+	
+	#Sat0_Head
+	if Global.sato:
+		var sato_head = ImageTexture.new()
+		sato_head.load(Global.sato_head)
+		realSnek.get_node("Sprite").set_texture(sato_head)
+	
 	#print(projectResolution)
 	
 	add_child(realSnek)
@@ -31,6 +38,13 @@ func spawn_fruit():
 	var node = fruit.instance()
 	var newPos = Vector2(rand_range(fruitOffset, projectResolution.x - fruitOffset), rand_range(fruitOffset, projectResolution.y - fruitOffset))
 	node.position = newPos
+	
+	#Sat0_Fruit
+	if Global.sato:
+		var tex = ImageTexture.new()
+		tex.load(Global.sato_tail_array[randi() % Global.sato_tail_array.size()])
+		node.get_node("Sprite").set_texture(tex)
+	
 	#print(newPos)
 	add_child(node)
 	pass

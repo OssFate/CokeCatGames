@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dragon_head.png-0237d54a961d8b5cb4bb3382941d8fb7.stex"
+path="res://.import/girl_9.png-7b84b62d09a6097d694f23b4b5aa1a77.stex"
 
 [deps]
 
-source_file="res://dragon_head.png"
-dest_files=[ "res://.import/dragon_head.png-0237d54a961d8b5cb4bb3382941d8fb7.stex" ]
+source_file="res://skin/sato/girl_9.png"
+dest_files=[ "res://.import/girl_9.png-7b84b62d09a6097d694f23b4b5aa1a77.stex" ]
 
 [params]
 
